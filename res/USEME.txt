@@ -1,0 +1,70 @@
+
+To execute the program, navigate to the main class, and click run button.
+
+By default, the program will pop the GUI and then user can interact with this image processed through GUI.
+
+To run the file mode or interact command mode, go to the configuration and set up configurations accordingly, screenshots named with configuration has been provided to user what the configuration should look like.
+
+If user hit other buttons besides load, a warning pop window will show up to remind user that he/she needs to load a file first to proceed.
+
+When hit a load button, an file dialog	will appear, also the filter will tell the user which type image is expected to load, if the specified type image doesn't exit, user can not load the image.(for ppm files, only supports p3 ppm).
+
+After image is loaded, it will be displayed in the center of the window, image process command buttons  listed on the left and right of the image, user can click any button to execute the process command accordingly.
+
+At any time of the process, user can click save button to save the current image displayed to png, jpeg, or ppm(only p3 supported). To save the current image, simply choose a path and type a name for the image to be saved, there is no need to add extension to it.
+
+A histogram of the image is also displayed at the bottom for the current image, the GUI doesn't provide save function for this histogram.
+
+During anytime of the process, user can click close Botton on the left top to leave the GUI.
+
+
+
+Previous USEME contents:
+
+To perform image processing, an load method should be executed first in order to process the image
+For example, load-jpeg res/dog.jpeg dog
+
+Inside the script file, in order for the script command to be executed correctly, there should be one command per line,
+there shouldn't be empty lines between commands.
+
+what also should keep in mind is that there shouldn't be empty lines left after the last command.
+
+When execute the jar file , use "load-jpeg dog.jpeg dog" instead of the "load-jpeg res/dog.jpeg dog"
+
+Use following script commands syntax to perform image processing for png and jpeg:
+
+load-jpeg res/dog.jpeg dog
+blur dog dog-blur
+save-jpeg res/dog-blur.jpeg dog-blur
+
+load-jpeg res/dog.jpeg dog
+sharpen dog dog-sharpen
+save-jpeg res/dog-sharpen.jpeg dog-sharpen
+
+load-jpeg res/dog.jpeg dog
+greyscale dog dog-greyscale
+save-jpeg res/dog-greyscale.jpeg dog-greyscale
+
+load-jpeg res/dog.jpeg dog
+sepia dog dog-sepia
+save-jpeg res/dog-sepia.jpeg dog-sepia
+
+load-png res/s-p.png sp
+blur sp sp-blur
+save-png res/sp-blur.png sp-blur
+
+load-png res/s-p.png sp
+sharpen sp sp-sharpen
+save-png res/sp-sharpen.png sp-sharpen
+
+load-png res/s-p.png sp
+greyscale sp sp-greyscale
+save-png res/sp-greyscale.png sp-greyscale
+
+load-png res/s-p.png sp
+sepia sp sp-sepia
+save-png res/sp-sepia.png sp-sepia
+
+
+
+

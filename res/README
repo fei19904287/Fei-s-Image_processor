@@ -1,0 +1,147 @@
+# IME: Image Manipulation and Enhancement
+
+This program represents a text-based image processing application that support loading,
+manipulating, and saving images using simple text-based commands. Some image manipulations
+include, brightness, darkness, intensity, and luma.
+
+
+- To run the program, navigate to the main class , and click the run button, by default, the it will lunch the GUI interface.
+
+
+design changes and justifications:
+
+- to add the GUI , a view package and several view interface and class was created to render GUI to the user.
+  A new controller class and interface was also created to suit the needs.
+
+
+- for better test purpose, add getImageId method in the ControllerView class.
+
+
+
+## Table of Contents
+- [Content Overview]
+- [Script of Commands]
+- [Citation]
+
+
+## Content Overview
+
+#src
+# Package: model
+
+- IPixelState: This interface represents operations that can be used to monitor
+the state of a pixel.
+
+- IPixel: This interface represents setters of pixels.
+
+- Pixel: This class implements the IPixel interface. This class represents a pixel object that
+sets and gets RGB values.
+
+
+- IImageState: This interface represents the state of an image which has height, width,
+and RGB channels at specified width and height.
+
+- IImage: This interface represents setting pixel for an image at specified row, col,
+and RGB values.
+
+- ImageImpl: This class represents an image at specified row, col, and RGB values.
+
+
+# Package: model.transformations
+
+- ITransformation: This interface has a method that represents image transformations.
+
+- The following classes all implement ITransformation interface. Each classes represents a type
+of image transformation.
+    - BrightenTransformation
+    - ValueTransformation
+    - IntensityTransformation
+    - LumaTransformation
+    - RedTransformation
+    - GreenTransformation
+    - BlueTransformation
+    - ColorTransformation
+    - FilterTransformation
+
+
+
+# Package model
+
+- IImageDataBase: This interface represents a model that stores images and their name/IDs.
+
+- ImageDataBase: This class represents a model that stores images and their name/IDs.
+This class implements the IImageDataBase interface.
+
+
+
+# Package controller.commands
+
+- ICommand: This interface has a method that takes in a scanner object and a model
+to run user commands. Command pattern is utilized here for the controller.
+
+- The following classes all implement ICommand interface. Every command has
+its own logic of how to read from the scanner. Applying the command pattern will avoid
+multiple if statements in the controller.
+      - BrightenCommand
+      - ValueComponentCommand
+      - IntensityComponentCommand
+      - LumaComponentCommand
+      - RedComponentCommand
+      - GreenComponentCommand
+      - BlueComponentCommand
+      - LoadCommand
+      - SavePPMCommand
+      - QuitCommand
+      - GreyScaleCommand
+      - BlurCommand
+      - SepiaCommand
+      - SharpenCommand
+
+
+# Package controller.io
+
+- IImageLoader: This interface represents a loading operation of a file type.
+
+- PPMImageLoader: This class implements the IImageLoader interface.
+This class represents a PPM image loader type.
+
+- IImageSaver: This interface represents a saving operation to a file type.
+
+- PPMImageSaver: This class implements the IImageSaver interface.
+This class represents a PPM image saver type.
+
+- OtherformatImageLoader:This class implements the IImageLoader interface.
+This class represents all other image loader type besides ppm.
+
+- PNGImageSaver: This class implements the IImageSaver interface.
+This class represents a PPM image saver type.
+
+- JPEGImageSaver: This class implements the IImageSaver interface.
+This class represents a PPM image saver type.
+
+
+
+
+# Package controller
+
+- IController: This interface represents a controller.
+
+- IControllerImpl: This class implements the IController interface.
+This class represents the implementation of the controller.
+
+# ImageUtil: This one of the provided file under the starter code for this assignment.
+
+# main: This represents a main function to lunch the program.
+
+
+## Script of Commands
+Navigate main to lunch the program, the console will prompt user to enter commands to execute. Type the following commands to execute different commands.
+
+load res/dog.jpeg dog
+brighten 100 dog brighten-dog
+save res/brighten-dog.ppm brighten-dog
+
+## Citation
+The following citation is for the dog image under the res folder.
+
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fa-nikolaev.github.io%2Fcpp-spring-2015%2Flab%2F6%2F&psig=AOvVaw3LVZRxS3OkeAgsX0CZs1SC&ust=1690172002011000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCLC6qcH7o4ADFQAAAAAdAAAAABAE

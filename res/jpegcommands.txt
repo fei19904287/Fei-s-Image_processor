@@ -1,0 +1,12 @@
+load-jpeg res/dog.jpeg dog
+blur dog dog-blur
+save-jpeg res/dog-blur.jpeg dog-blur
+load-jpeg res/dog.jpeg dog
+sharpen dog dog-sharpen
+save-jpeg res/dog-sharpen.jpeg dog-sharpen
+load-jpeg res/dog.jpeg dog
+greyscale dog dog-greyscale
+save-jpeg res/dog-greyscale.jpeg dog-greyscale
+load-jpeg res/dog.jpeg dog
+sepia dog dog-sepia
+save-jpeg res/dog-sepia.jpeg dog-sepia
